@@ -62,5 +62,5 @@ void* sell_tickets() {
 }
 
 void find_customer() {
-  sleep(rand() % 5); // Uh oh, sleeping on the work!
+  sleep(rand() % 5); // Uh oh, sleeping on the job!
 }
