@@ -9,3 +9,4 @@ RUN make -C hello-world
 RUN make -C guess-game
 RUN make -C factorial
 RUN make -C counters
+RUN make -C tickets
