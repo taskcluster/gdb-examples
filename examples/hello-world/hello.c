@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 int main() {
+  int i;
   printf("Hello World\n");
-  for (int i = 0; i < 10; i++) {
+  for (i = 0; i < 10; i++) {
     printf("Counting: %i\n", i);
   }
 

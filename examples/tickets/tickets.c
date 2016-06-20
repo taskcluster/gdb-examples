@@ -15,19 +15,20 @@ void* sell_tickets();
 void find_customer();
 
 int main() {
+  int i;
   pthread_t sellers[SELLERS_COUNT];
 
   if (pthread_mutex_init(&lock, NULL) != 0) return -1;
 
   srand(time(NULL));
 
-  for (int i = 0; i < SELLERS_COUNT; i++) {
+  for (i = 0; i < SELLERS_COUNT; i++) {
     int status = pthread_create(&(sellers[i]), NULL,
       &sell_tickets, NULL);
     if (status != 0) return -1;
   }
 
-  for (int i = 0; i < SELLERS_COUNT; i++) {
+  for (i = 0; i < SELLERS_COUNT; i++) {
     pthread_join(sellers[i], NULL);
   }
 
