@@ -7,7 +7,7 @@ int main(void) {
   int guessed_num = 0;
   int counter = 0;
 
-  srand(time(NULL));
+  srand(time(0));
   random_num = rand() % 10 + 1;
 
   printf("Guess my number! ");
