@@ -1,6 +1,7 @@
 # Build results
 examples/*/main
 examples/counters/counter
+examples/hackathon/team
 
 # Vim temporary files
 [._]*.s[a-w][a-z]
