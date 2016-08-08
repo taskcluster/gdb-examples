@@ -1,4 +1,4 @@
-all: guess
+all: main
 
-guess: guess.c
-	gcc -g $< -o main
+main: guess.c
+	gcc -g $< -o $@

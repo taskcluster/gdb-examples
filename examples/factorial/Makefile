@@ -1,4 +1,4 @@
-all: factorial
+all: main
 
-factorial: factorial.c
-	gcc -g $< -o main
+main: factorial.c
+	gcc -g $< -o $@

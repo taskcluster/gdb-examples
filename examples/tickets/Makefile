@@ -1,4 +1,4 @@
-all: tickets
+all: main
 
-tickets: tickets.c
-	gcc -g $< -o main -lpthread
+main: tickets.c
+	gcc -g $< -o $@ -lpthread
