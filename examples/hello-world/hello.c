@@ -1,3 +1,8 @@
+/**
+ * This is a hello-world example.
+ */
+
+
 #include <stdio.h>
 
 int main() {
@@ -9,4 +14,3 @@ int main() {
 
   return 0;
 }
-

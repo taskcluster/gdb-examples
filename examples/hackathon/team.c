@@ -4,10 +4,11 @@
 #include <pthread.h>
 #include <time.h>
 #include <stdbool.h>
+#include <unistd.h>
 #include "globals.h"
 #include "programmer/index.h"
 
-/* Initializing globals. */
+// Initializing globals.
 int bugs_remain, bugs_fixed;
 pthread_mutex_t assign_lock, commit_lock;
 pid_t pid;
@@ -15,18 +16,18 @@ pid_t pid;
 int main() {
   srand(time(0));
 
-  /* Assigning globals. */
+  // Assigning globals.
   pid = getpid();
   bugs_remain = BUGS_COUNT;
   bugs_fixed = 0;
 
-  /* Initializing locals. */
+  // Initializing locals.
   int i;
   pthread_t programmers[PROGRAMMERS_COUNT];
   sem_t chopsticks[PROGRAMMERS_COUNT];
   sem_t eating;
 
-  /* Initializing mutexes and semaphores. */
+  // Initializing mutexes and semaphores.
   if (pthread_mutex_init(&assign_lock, 0) != 0 ||
     pthread_mutex_init(&commit_lock, 0) != 0 ||
     sem_init(&eating, 0, PROGRAMMERS_COUNT - 1) != 0) {
@@ -37,7 +38,7 @@ int main() {
     if (sem_init(&(chopsticks[i]), 0, 1) != 0) return -1;
   }
 
-  /* Running threads. */
+  // Running threads.
   for (i = 0; i < PROGRAMMERS_COUNT; i++) {
     spawn_programmer_args *args = malloc(sizeof(*args));
     args->id = i;
@@ -49,12 +50,12 @@ int main() {
     }
   }
 
-  /* Waiting for threads to finish. */
+  // Waiting for threads to finish.
   for (i = 0; i < PROGRAMMERS_COUNT; i++) {
     pthread_join(programmers[i], 0);
   }
 
-  /* Destoying mutexes and semaphores. */
+  // Destoying mutexes and semaphores.
   pthread_mutex_destroy(&assign_lock);
   pthread_mutex_destroy(&commit_lock);
   sem_destroy(&eating);

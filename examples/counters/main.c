@@ -1,3 +1,9 @@
+/**
+ * This is the example of multiple processes.
+ * In this example multiple counters in different processes
+ * are doing their work while the parent process is waiting on them.
+ */
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>

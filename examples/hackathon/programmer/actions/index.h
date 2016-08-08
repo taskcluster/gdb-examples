@@ -3,7 +3,7 @@
 
 #include <semaphore.h>
 
-void eat_sushi(int id, sem_t *eating, sem_t *left_chopstick,sem_t *right_chopstick);
-void fix_bug(int id);
+void eat_sushi(int, sem_t*, sem_t*, sem_t*);
+void fix_bug(int);
 
 #endif

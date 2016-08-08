@@ -10,6 +10,6 @@ typedef struct {
   sem_t *right_chopstick;
 } spawn_programmer_args;
 
-void* spawn_programmer(void *args);
+void* spawn_programmer(void*);
 
 #endif

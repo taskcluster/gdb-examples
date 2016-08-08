@@ -1,8 +1,13 @@
+/**
+ * This is a simple guess game.
+ * It involves some interaction (with stdin).
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main(void) {
+int main() {
   int random_num = 0;
   int guessed_num = 0;
   int counter = 0;

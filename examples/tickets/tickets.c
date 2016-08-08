@@ -1,3 +1,9 @@
+/**
+ * This example features multithreading.
+ * Threads are ticket sellers who are searching for customers (simultaneously)
+ * and then sell them tickets (this involves locking).
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
@@ -16,7 +22,7 @@ typedef struct {
 static int tickets = TICKETS_COUNT;
 static pthread_mutex_t lock;
 
-void* spawn_seller(void *args);
+void* spawn_seller(void*);
 void find_customer();
 
 int main() {

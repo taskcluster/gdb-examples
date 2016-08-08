@@ -1,3 +1,15 @@
+/**
+ * This is a full fledged example that tries to feature a lot of things.
+ * It creates multiple processes, each of them is multithreaded.
+ * Basically, it's a simulation of a hackathon (kind of).
+ * Main process creates teams of programmers. Each programmer is a new thread.
+ * Programmers fix bugs and eat sushi with chopsticks. After each such cycle
+ * they commit their work. Team that fixes all of the bugs first is the winner.
+ * This example uses semaphores and mutexes. It's easy to introduce deadlocks,
+ * since it's almost a classical dining philosophers problem.
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
