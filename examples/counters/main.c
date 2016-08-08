@@ -2,20 +2,27 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+#define COUNTERS_COUNT 10
+
 int main() {
   int i;
+  pid_t counters[COUNTERS_COUNT];
 
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < COUNTERS_COUNT; i++) {
     pid_t pid = fork();
-    if (pid == 0) {
-      execl("counter", NULL);
-      _exit(EXIT_FAILURE);
-    } else if (pid < 0) {
+    if (pid < 0) {
       return -1;
+    } else if (pid == 0) {
+      execl("counter", 0);
+      _exit(EXIT_FAILURE);
+    } else {
+      counters[i] = pid;
     }
   }
 
-  wait(NULL);
+  for (i = 0; i < COUNTERS_COUNT; i++) {
+    waitpid(counters[i], 0, 0);
+  }
 
   return 0;
 }

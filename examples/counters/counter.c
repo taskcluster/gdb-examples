@@ -4,13 +4,13 @@
 #include <stdio.h>
 
 int main() {
-  srand(time(NULL) ^ (getpid()<<16));
+  srand(time(0) ^ (getpid()<<16));
 
   int i;
-  int token = rand() % 100;
+  pid_t pid = getpid();
 
   for (i = 0; i < 10; i++) {
-    printf("%i child is counting: %i\n", token, i);
+    printf("%i child is counting: %i\n", pid, i);
     sleep(rand() % 5);
   }
 
