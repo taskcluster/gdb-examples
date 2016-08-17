@@ -2,7 +2,6 @@
  * This is a hello-world example.
  */
 
-
 #include <stdio.h>
 
 int main() {

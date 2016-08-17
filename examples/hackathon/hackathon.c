@@ -9,7 +9,6 @@
  * since it's almost a classical dining philosophers problem.
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

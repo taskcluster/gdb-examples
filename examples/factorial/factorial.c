@@ -4,7 +4,6 @@
  * It's also possible to pass parameters to it through CLI.
  */
 
-
 #include <stdlib.h>
 #include <stdio.h>
 
