@@ -19,7 +19,7 @@ int main() {
     if (pid < 0) {
       return -1;
     } else if (pid == 0) {
-      execl("counter", 0);
+      execl("./counter", "./counter", NULL);
       _exit(EXIT_FAILURE);
     } else {
       counters[i] = pid;
