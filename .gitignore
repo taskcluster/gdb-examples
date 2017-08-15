@@ -1,7 +1,11 @@
-# Build results
-examples/*/main
-examples/counters/counter
-examples/hackathon/team
+# Ignore files without extension (e.g. executables)
+*
+!*.*
+!*/
+!Makefile
+
+# Ignore build results
+*.o
 
 # Vim temporary files
 [._]*.s[a-w][a-z]
