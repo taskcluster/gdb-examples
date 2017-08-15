@@ -9,3 +9,4 @@ Docker image with example projects for playing with GDB.
 * `counters` — an example of multiple forked processes (inferiors)
 * `hackathon` — a full-fledged example with multiple multithreaded processes
 * `encodings` — a playground for experiments with encodings
+* `templates` — a playground for experiments with templates
