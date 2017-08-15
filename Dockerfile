@@ -1,14 +1,12 @@
-FROM ubuntu
-RUN apt-get update && apt-get install -y \
+FROM alpine:3.6
+
+RUN apk add --no-cache \
     g++ \
     gdb \
     make
+
 COPY examples /examples/
+
 WORKDIR /examples
-RUN make -C hello-world
-RUN make -C guess-game
-RUN make -C factorial
-RUN make -C counters
-RUN make -C tickets
-RUN make -C hackathon
-RUN make -C encodings
+
+RUN make
